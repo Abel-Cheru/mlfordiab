@@ -11,7 +11,7 @@ import pandas as pd
 import streamlit as st
 from streamlit_option_menu import option_menu
 from sklearn.preprocessing import StandardScaler
-from tensorflow.keras.models import load_model
+
 
 
 scaler = StandardScaler()
@@ -21,7 +21,7 @@ y = df['Outcome']
 scaler.fit(x)
 standardized_data = scaler.transform(x)
 
-diabetes_model = load_model('Diab_cnnlstm66.keras')
+diabetes_model = load_model('diabetes_model.sav','rb')
 
 with st.sidebar:
     selected = option_menu('DIABETE Disease Pred',
