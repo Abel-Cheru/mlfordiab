@@ -11,14 +11,18 @@ import pandas as pd
 import streamlit as st
 from streamlit_option_menu import option_menu
 from sklearn.preprocessing import StandardScaler
- 
+from tensorflow.keras.models import load_model
+
+
 scaler = StandardScaler()
 df = pd.read_csv('diabetes.csv')
 x = df.drop(columns='Outcome', axis=1)
 y = df['Outcome']
 scaler.fit(x)
 standardized_data = scaler.transform(x)
-diabetes_model = pickle.load(open('diabetes_model.sav','rb'))
+
+diabetes_model = load_model('Diab_cnnlstm66.keras')
+
 with st.sidebar:
     selected = option_menu('DIABETE Disease Pred',
                     ['Diabetes Prediction', 'GFR','About the Diab'],
