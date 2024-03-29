@@ -60,6 +60,3 @@ if (selected == 'Diabetes Prediction' ):
             diab_dignosis = 'not Diabetic'
     st.success(diab_dignosis)
 
-
-if __name__=='__main__': 
-    main()
