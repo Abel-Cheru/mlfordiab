@@ -21,7 +21,7 @@ y = df['Outcome']
 scaler.fit(x)
 standardized_data = scaler.transform(x)
 
-diabetes_model = load_model('diabetes_model.sav','rb')
+diabetes_model = pickle.load(open('diabetes_model.sav','rb')
 
 with st.sidebar:
     selected = option_menu('DIABETE Disease Pred',
