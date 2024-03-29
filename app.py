@@ -21,7 +21,7 @@ y = df['Outcome']
 scaler.fit(x)
 standardized_data = scaler.transform(x)
 
-diabetes_model = load_model('Diab_cnnlstm66.keras')
+diabetes_model = load_model('Diab_cnnlstm660.keras')
 
 with st.sidebar:
     selected = option_menu('DIABETE Disease Pred',
